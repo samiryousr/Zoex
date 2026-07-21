@@ -52,24 +52,24 @@ export default function Hero() {
         {BACKDROPS.map((backdrop, index) => (
           <div
             key={backdrop.src}
-            className="absolute inset-0 animate-hero-slide opacity-0"
-            style={{ animationDelay: `${index * 15}s` }}
+            className="absolute inset-0 animate-hero-slide"
+            style={{ animationDelay: `${index * 5}s` }}
           >
             <Image
               src={backdrop.src}
               alt={backdrop.alt}
               fill
-              priority={index === 0}
-              className="object-cover object-center brightness-[0.88] contrast-[1.02]"
+              priority={index === 1}
+              className="object-cover object-center brightness-120 contrast-200"
               sizes="100vw"
             />
           </div>
         ))}
       </div>
 
-      {/* Clean Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-slate-950/20" />
-      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950 to-transparent pointer-events-none" />
+      {/* Clean Gradient Overlay - Only fades at the bottom to blend with movies section */}
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950 to-transparent pointer-events-none" />
 
       {/* Hero Content */}
       <div className="relative z-10 mx-auto w-full max-w-4xl text-center">
