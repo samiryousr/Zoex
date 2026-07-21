@@ -47,13 +47,13 @@ export default function Hero() {
 
   return (
     <section className="relative flex min-h-[50vh] sm:min-h-[55vh] items-center justify-center overflow-hidden px-4 pt-32 pb-20 sm:px-6 sm:pt-36 sm:pb-24 lg:px-8 bg-slate-950">
-      {/* Background Images - Slow 10s alternation transition */}
+      {/* Background Images - Slow 15s alternation transition */}
       <div className="absolute inset-0">
         {BACKDROPS.map((backdrop, index) => (
           <div
             key={backdrop.src}
             className="absolute inset-0 animate-hero-slide opacity-0"
-            style={{ animationDelay: `${index * 10}s` }}
+            style={{ animationDelay: `${index * 15}s` }}
           >
             <Image
               src={backdrop.src}

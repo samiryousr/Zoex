@@ -11,7 +11,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  --animate-hero-slide: hero-slide 20s ease-in-out infinite;
+  --animate-hero-slide: hero-slide 30s ease-in-out infinite;
   --animate-hero-glow: hero-glow 8s ease-in-out infinite alternate;
   --animate-hero-drift: hero-drift 14s ease-in-out infinite alternate;
 }
@@ -19,22 +19,22 @@
 @keyframes hero-slide {
   0% {
     opacity: 0;
-    transform: scale(1);
+    transform: scale(1.02);
   }
-  5% {
+  4% {
     opacity: 1;
   }
-  20% {
+  48% {
     opacity: 1;
-    transform: scale(1.12);
+    transform: scale(1.1);
   }
-  25% {
+  52% {
     opacity: 0;
-    transform: scale(1.12);
+    transform: scale(1.1);
   }
   100% {
     opacity: 0;
-    transform: scale(1);
+    transform: scale(1.02);
   }
 }
 
