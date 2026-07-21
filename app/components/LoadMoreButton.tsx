@@ -76,27 +76,27 @@ export default function LoadMoreButton({ initialItems, page, imageUrl, type }: L
 
   return (
     <>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-3 lg:grid-cols-4">
         {items.map((item) => (
           <Link href={getHref(item)} key={item.id}>
-            <article className="cursor-pointer hover:bg-violet-900/100 group overflow-hidden rounded-2xl border border-violet-800/50 bg-violet-900/40 backdrop-blur-sm transition hover:border-cyan-400/40 hover:shadow-lg hover:shadow-violet-900/50">
+            <article className="cursor-pointer hover:bg-violet-900/100 group overflow-hidden rounded-xl sm:rounded-2xl border border-violet-800/50 bg-violet-900/40 backdrop-blur-sm transition hover:border-cyan-400/40 hover:shadow-lg hover:shadow-violet-900/50">
               <div className="relative aspect-[2/3] overflow-hidden">
                 <Image
                   src={item.poster_path ? `${imageUrl}${item.poster_path}` : 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80'}
                   alt={`${getTitle(item)} poster`}
                   fill
                   className="object-cover transition duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 />
-                <span className="absolute right-3 top-3 rounded-full bg-violet-950/80 px-2.5 py-1 text-xs font-semibold text-cyan-300 backdrop-blur-sm">
+                <span className="absolute right-2 top-2 sm:right-3 sm:top-3 rounded-full bg-violet-950/80 px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-xs font-semibold text-cyan-300 backdrop-blur-sm">
                   ★ {item.vote_average.toFixed(1)}
                 </span>
               </div>
 
-              <div className="p-4">
-                <h3 className="text-lg font-semibold text-white">{getTitle(item)}</h3>
-                <p className="mt-1 text-sm text-violet-200/60">
-                  {getYear(item)} · {item.original_language}
+              <div className="p-2.5 sm:p-4">
+                <h3 className="text-xs sm:text-base font-bold text-white truncate" title={getTitle(item)}>{getTitle(item)}</h3>
+                <p className="mt-0.5 sm:mt-1 text-[10px] sm:text-xs text-violet-200/60">
+                  {getYear(item)} · {item.original_language.toUpperCase()}
                 </p>
               </div>
             </article>

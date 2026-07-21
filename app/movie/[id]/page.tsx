@@ -231,11 +231,11 @@ export default async function MoviePage({
           </div>
         </div>
 
-        <div className="mt-6 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {similarMovies.map((item) => (
             <article
               key={item.title}
-              className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-950/60 shadow-[0_20px_60px_rgba(0,0,0,0.2)] backdrop-blur-xl"
+              className="overflow-hidden rounded-xl sm:rounded-[1.5rem] border border-white/10 bg-slate-950/60 shadow-[0_20px_60px_rgba(0,0,0,0.2)] backdrop-blur-xl"
             >
               <div className="relative aspect-[3/4]">
                 <Image
@@ -243,12 +243,12 @@ export default async function MoviePage({
                   alt={`${item.title} poster`}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1280px) 33vw, 25vw"
                 />
               </div>
-              <div className="p-4">
-                <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-1 text-sm text-slate-400">{item.year}</p>
+              <div className="p-3 sm:p-4">
+                <h3 className="text-xs sm:text-base font-bold text-white truncate" title={item.title}>{item.title}</h3>
+                <p className="mt-0.5 sm:mt-1 text-[10px] sm:text-sm text-slate-400">{item.year}</p>
               </div>
             </article>
           ))}
