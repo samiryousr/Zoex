@@ -3,7 +3,7 @@ import { getPopularTvShows } from "../lib/tmdbtv";
 
 export default async function Tvshows({ page = 1 }: { page: number }) {
   const data = await getPopularTvShows(page);
-  const shows = data.results.slice(0, 6);
+  const shows = data.results.slice(0, 8);
   const imageUrl = process.env.NEXT_PUBLIC_TMDB_IMAGE_URL || "https://image.tmdb.org/t/p/w500";
 
   return (

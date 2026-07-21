@@ -3,7 +3,7 @@ import LoadMoreButton from "./LoadMoreButton";
 
 export default async function MovieGrid({ page = 1 }: { page: number }) {
   const data = await getPopularMovies(page);
-  const MOVIES = data.results.slice(0, 6);
+  const MOVIES = data.results.slice(0, 8);
   const imageUrl = process.env.NEXT_PUBLIC_TMDB_IMAGE_URL || "https://image.tmdb.org/t/p/w500";
   
   return (
